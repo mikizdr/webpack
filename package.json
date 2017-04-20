@@ -4,6 +4,7 @@
   "description": "Sample wwebpack app",
   "main": "app.js",
   "scripts": {
+    "start": "webpack-dev-server --entry ./src/js/app.js --output-filename ./dist/bundle.js",
     "build": "webpack"
   },
   "author": "Miroslav Zdravkovic",
@@ -12,6 +13,9 @@
     "jquery": "^3.2.1"
   },
   "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^6.4.1",
+    "babel-preset-es2015": "^6.24.1",
     "css-loader": "^0.28.0",
     "style-loader": "^0.16.1"
   }

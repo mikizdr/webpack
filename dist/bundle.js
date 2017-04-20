@@ -63,11 +63,40 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 12);
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/*
+module.exports = `
+    <div className="container">
+        <div className="row">
+            <h1>Kukuriku!!!----</h1>
+        </div>
+    </div>
+`;
+*/
+
+/*
+function getHello(){
+    return 'Hello from function!';
+}
+
+module.exports = getHello();
+*/
+
+var people = [{ name: 'John Doe' }, { name: 'Steve Smith' }, { name: 'Carol Wiliams' }];
+
+module.exports = people;
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -10327,16 +10356,16 @@ return jQuery;
 
 
 /***/ }),
-/* 1 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(8);
+var content = __webpack_require__(9);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(10)(content, {});
+var update = __webpack_require__(11)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -10351,36 +10380,6 @@ if(false) {
 	// When the module is disposed, remove the <style> tags
 	module.hot.dispose(function() { update(); });
 }
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
-/*
-module.exports = `
-    <div className="container">
-        <div className="row">
-            <h1>Kukuriku!!!----</h1>
-        </div>
-    </div>
-`;
-*/
-
-/*
-function getHello(){
-    return 'Hello from function!';
-}
-
-module.exports = getHello();
-*/
-
-let people = [
-    {name: 'John Doe'},
-    {name: 'Steve Smith'},
-    {name: 'Carol Wiliams'}
-];
-
-module.exports = people;
 
 /***/ }),
 /* 3 */
@@ -12432,7 +12431,23 @@ module.exports = Array.isArray || function (arr) {
 /* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(9)(undefined);
+"use strict";
+
+
+__webpack_require__(2);
+
+var people = __webpack_require__(0);
+var $ = __webpack_require__(1);
+
+$.each(people, function (key, value) {
+    $('body').append('<h1>' + people[key].name + '</h1>');
+});
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(10)(undefined);
 // imports
 
 
@@ -12443,7 +12458,7 @@ exports.push([module.i, "body{\r\n    background: darkorange;\r\n}", ""]);
 
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {/*
@@ -12525,7 +12540,7 @@ function toComment(sourceMap) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5).Buffer))
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -12562,7 +12577,7 @@ var stylesInDom = {},
 	singletonElement = null,
 	singletonCounter = 0,
 	styleElementsInsertedAtTop = [],
-	fixUrls = __webpack_require__(11);
+	fixUrls = __webpack_require__(12);
 
 module.exports = function(list, options) {
 	if(typeof DEBUG !== "undefined" && DEBUG) {
@@ -12821,7 +12836,7 @@ function updateLink(linkElement, options, obj) {
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports) {
 
 
@@ -12913,20 +12928,6 @@ module.exports = function (css) {
 	// send back the fixed css
 	return fixedCss;
 };
-
-
-/***/ }),
-/* 12 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(1);
-
-let people = __webpack_require__(2);
-let $ = __webpack_require__(0);
-
-$.each(people, function(key, value){
-    $('body').append('<h1>'+people[key].name+'</h1>');
-});
 
 
 /***/ })
