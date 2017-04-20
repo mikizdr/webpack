@@ -4,11 +4,15 @@
   "description": "Sample wwebpack app",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack"
   },
   "author": "Miroslav Zdravkovic",
   "license": "ISC",
   "dependencies": {
     "jquery": "^3.2.1"
+  },
+  "devDependencies": {
+    "css-loader": "^0.28.0",
+    "style-loader": "^0.16.1"
   }
 }
